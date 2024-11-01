@@ -17,5 +17,5 @@ export const useCourseData = () => {
 
     coursesData();
   }, []);
-  return { courses, errorMessage };
+  return { courses, setCourses, errorMessage };
 };

@@ -8,6 +8,26 @@
   justify-content: center;
 }
 
+.rootcard {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 30px 60px;
+  margin-bottom: 16px;
+  min-height: 550px;
+}
+
+.controlbtns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 60px 0px;
+}
+
+.deleteCoursebtn {
+  background-color: rgb(146, 8, 8);
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

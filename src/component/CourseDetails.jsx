@@ -23,15 +23,6 @@ const CourseDetails = () => {
     }
   }, [id]);
 
-  const handleDelete = async () => {
-    try {
-      await customInstance.delete(`/api/v1/courses/${id}`);
-      navigate("/");
-    } catch (error) {
-      console.error("Error deleting course:", error);
-    }
-  };
-
   const handleEdit = () => {
     navigate(`/course/edit/${id}`);
     console.log("Edit course:", course);
@@ -65,11 +56,7 @@ const CourseDetails = () => {
               Edit
             </button>{" "}
           </div>
-          <div>
-            <button onClick={handleDelete} className={styles.deletebutton}>
-              Delete
-            </button>
-          </div>
+          <div></div>
         </div>
       </div>
     </div>
