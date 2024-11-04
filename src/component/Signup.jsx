@@ -2,11 +2,12 @@ import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useNavigate } from "react-router-dom";
 import customInstance from "../axiosInstance";
+import styles from "./signup.module.css";
 
 const Signup = () => {
   const navigate = useNavigate();
   return (
-    <div>
+    <div className={styles.signuppage}>
       <h1>Signup</h1>
       <Formik
         initialValues={{ name: "", email: "", password: "" }}
@@ -47,12 +48,12 @@ const Signup = () => {
         }}
       >
         {({ isSubmitting }) => (
-          <Form>
-            <Field type="username" name="name" />
+          <Form className={styles.mainform}>
+            <Field type="username" name="name" placeholder="Username" />
             <ErrorMessage name="name" component="div" />
-            <Field type="email" name="email" />
+            <Field type="email" name="email" placeholder="Email" />
             <ErrorMessage name="email" component="div" />
-            <Field type="password" name="password" />
+            <Field type="password" name="password" placeholder="Password" />
             <ErrorMessage name="password" component="div" />
             <button type="submit" disabled={isSubmitting}>
               Submit
