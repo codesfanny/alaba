@@ -3,6 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import styles from "./login.module.css";
 import AuthenticationAPI from "../../api/authentication";
 import { h } from "../../libs/helpers";
+import { useContext } from "react";
+import authContext from "../contexts/authContext";
 
 const api = AuthenticationAPI();
 
@@ -24,6 +26,7 @@ const validate = (values) => {
 
 const Login = () => {
   const navigate = useNavigate();
+  const { setAuth } = useContext(authContext);
 
   const formik = useFormik({
     initialValues: { email: "", password: "" },
@@ -31,6 +34,10 @@ const Login = () => {
       api
         .login(values)
         .then((res) => {
+          setAuth({
+            email: res.data.email,
+            token: res.data.token,
+          });
           console.log(res);
           localStorage.setItem("authToken", res.data.token);
           navigate("/");

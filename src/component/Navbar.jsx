@@ -1,11 +1,15 @@
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./navbar.module.css";
-import { useState } from "react";
+import authContext from "../contexts/authContext";
+import { useContext } from "react";
 
-const Navbar = () => {
-  const [isAuthenticated] = useState(!!localStorage.getItem("authToken"));
+const Navbar = ({ isAuthenticated }) => {
+  const { setAuth, auth } = useContext(authContext);
+
   const navigate = useNavigate();
+
   const HandleLogout = () => {
+    setAuth(null);
     localStorage.removeItem("authToken");
     navigate("/Login");
   };
@@ -16,7 +20,7 @@ const Navbar = () => {
         <Link to="/">Na Project</Link>
       </div>
       <ul className={styles.navLinks}>
-        {!isAuthenticated ? (
+        {!auth ? (
           <>
             <li>
               <Link to="/Login">Login</Link>
