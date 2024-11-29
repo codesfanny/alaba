@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const customInstance = axios.create({
-  baseURL: "https://devcamper-api-v2.onrender.com",
+  baseURL: "https://davidwaga.pythonanywhere.com/api/v1",
 });
 
 customInstance.interceptors.request.use(

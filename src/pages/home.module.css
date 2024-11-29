@@ -1,3 +1,7 @@
+.allmain {
+  margin: 0;
+}
+
 .container {
   display: flex;
   align-items: center;
@@ -29,7 +33,11 @@
   color: white;
 }
 
-button {
+.text {
+  color: black;
+}
+
+/* button {
   border-radius: 50px;
   border: 1px solid transparent;
   padding: 0.9em 3.7em;
@@ -44,4 +52,4 @@ button {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
-}
+} */

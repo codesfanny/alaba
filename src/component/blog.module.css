@@ -1,0 +1,40 @@
+.title {
+  color: black;
+  font-size: 25px;
+  margin: 0;
+}
+
+.content {
+  color: black;
+  line-height: 1.8em;
+  overflow: hidden;
+  font-size: 18px;
+  flex-grow: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limits content to 3 lines */
+  -webkit-box-orient: vertical;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #000;
+  border-radius: 20px;
+  padding: 40px 60px;
+  min-height: 250px;
+}
+
+.btn {
+  margin-top: 20px;
+  width: 45%;
+  padding: 12px 30px;
+  border-radius: 10px;
+  border: 0px;
+  background-color: gray;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: black;
+}
