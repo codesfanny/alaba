@@ -1,7 +1,9 @@
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./navbar.module.css";
+import { useState } from "react";
 
-const Navbar = ({ isAuthenticated }) => {
+const Navbar = () => {
+  const [isAuthenticated] = useState(!!localStorage.getItem("authToken"));
   const navigate = useNavigate();
   const HandleLogout = () => {
     localStorage.removeItem("authToken");
